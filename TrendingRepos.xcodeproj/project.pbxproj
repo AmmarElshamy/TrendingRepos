@@ -94,8 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				A0DA12222A4223BE001F72DD /* AppDelegate */,
-				A0DA11FB2A412447001F72DD /* Assets.xcassets */,
-				A0DA11FD2A412447001F72DD /* LaunchScreen.storyboard */,
+				A0DA12232A422407001F72DD /* Resources */,
 				A0DA12002A412447001F72DD /* Info.plist */,
 			);
 			path = TrendingRepos;
@@ -124,6 +123,15 @@
 				A0DA11F22A412446001F72DD /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A0DA12232A422407001F72DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA11FB2A412447001F72DD /* Assets.xcassets */,
+				A0DA11FD2A412447001F72DD /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
