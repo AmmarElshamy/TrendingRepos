@@ -17,6 +17,11 @@
 		A0DA12322A425E5F001F72DD /* RepositoriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12312A425E5F001F72DD /* RepositoriesViewControllerTests.swift */; };
 		A0DA12352A425FCC001F72DD /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12332A425FCC001F72DD /* RepositoriesViewController.swift */; };
 		A0DA12362A425FCC001F72DD /* RepositoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DA12342A425FCC001F72DD /* RepositoriesViewController.xib */; };
+		A0DA123B2A426480001F72DD /* RepositoryTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA123A2A426480001F72DD /* RepositoryTableViewCellTests.swift */; };
+		A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA123E2A4266DF001F72DD /* UIView+Indentifier.swift */; };
+		A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12402A426828001F72DD /* UIView+LoadNib.swift */; };
+		A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */; };
+		A0DA12452A4268C1001F72DD /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		A0DA12312A425E5F001F72DD /* RepositoriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewControllerTests.swift; sourceTree = "<group>"; };
 		A0DA12332A425FCC001F72DD /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		A0DA12342A425FCC001F72DD /* RepositoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoriesViewController.xib; sourceTree = "<group>"; };
+		A0DA123A2A426480001F72DD /* RepositoryTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCellTests.swift; sourceTree = "<group>"; };
+		A0DA123E2A4266DF001F72DD /* UIView+Indentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Indentifier.swift"; sourceTree = "<group>"; };
+		A0DA12402A426828001F72DD /* UIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadNib.swift"; sourceTree = "<group>"; };
+		A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 				A0DA12242A4227C5001F72DD /* Coordinator */,
 				A0DA122C2A425829001F72DD /* Presentation */,
 				A0DA12232A422407001F72DD /* Resources */,
+				A0DA123C2A426618001F72DD /* Utils */,
 				A0DA12002A412447001F72DD /* Info.plist */,
 			);
 			path = TrendingRepos;
@@ -165,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				A0DA122E2A42588B001F72DD /* ViewController */,
+				A0DA12372A4260C6001F72DD /* Cell */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -189,9 +201,52 @@
 		A0DA12302A4258E2001F72DD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				A0DA12312A425E5F001F72DD /* RepositoriesViewControllerTests.swift */,
+				A0DA12382A426454001F72DD /* ViewController */,
+				A0DA12392A426461001F72DD /* Cell */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A0DA12372A4260C6001F72DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */,
+				A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0DA12382A426454001F72DD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA12312A425E5F001F72DD /* RepositoriesViewControllerTests.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A0DA12392A426461001F72DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA123A2A426480001F72DD /* RepositoryTableViewCellTests.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A0DA123C2A426618001F72DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA123D2A426629001F72DD /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A0DA123D2A426629001F72DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA123E2A4266DF001F72DD /* UIView+Indentifier.swift */,
+				A0DA12402A426828001F72DD /* UIView+LoadNib.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +357,7 @@
 				A0DA11FF2A412447001F72DD /* LaunchScreen.storyboard in Resources */,
 				A0DA11FC2A412447001F72DD /* Assets.xcassets in Resources */,
 				A0DA12362A425FCC001F72DD /* RepositoriesViewController.xib in Resources */,
+				A0DA12452A4268C1001F72DD /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +382,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
+				A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */,
+				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
 				A0DA12352A425FCC001F72DD /* RepositoriesViewController.swift in Sources */,
 				A0DA122B2A4228C6001F72DD /* AppCoordinator.swift in Sources */,
 				A0DA12272A422845001F72DD /* Coordinator.swift in Sources */,
@@ -338,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0DA12322A425E5F001F72DD /* RepositoriesViewControllerTests.swift in Sources */,
+				A0DA123B2A426480001F72DD /* RepositoryTableViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
