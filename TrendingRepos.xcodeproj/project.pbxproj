@@ -56,6 +56,9 @@
 		A0FEE4732A43A6D5006F5505 /* Optional+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4722A43A6D5006F5505 /* Optional+ToString.swift */; };
 		A0FEE4752A43A837006F5505 /* TrendingRepositoriesUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4742A43A837006F5505 /* TrendingRepositoriesUseCaseSpy.swift */; };
 		A0FEE4782A43B30F006F5505 /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4772A43B30F006F5505 /* HttpMethods.swift */; };
+		A0FEE47A2A43B3A1006F5505 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4792A43B3A1006F5505 /* Endpoint.swift */; };
+		A0FEE47C2A43B432006F5505 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */; };
+		A0FEE47F2A43B6D7006F5505 /* NetworkConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE47E2A43B6D7006F5505 /* NetworkConstantsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		A0FEE4722A43A6D5006F5505 /* Optional+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+ToString.swift"; sourceTree = "<group>"; };
 		A0FEE4742A43A837006F5505 /* TrendingRepositoriesUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesUseCaseSpy.swift; sourceTree = "<group>"; };
 		A0FEE4772A43B30F006F5505 /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
+		A0FEE4792A43B3A1006F5505 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		A0FEE47E2A43B6D7006F5505 /* NetworkConstantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstantsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +293,7 @@
 			children = (
 				A0FEE4592A438D55006F5505 /* Domain */,
 				A0DA122F2A4258D1001F72DD /* Presentation */,
+				A0FEE47D2A43B6C5006F5505 /* Core */,
 			);
 			path = TrendingReposTests;
 			sourceTree = "<group>";
@@ -511,9 +518,27 @@
 		A0FEE4762A43B1B1006F5505 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A0FEE4772A43B30F006F5505 /* HttpMethods.swift */,
+				A0FEE4802A43B8A1006F5505 /* Utils */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		A0FEE47D2A43B6C5006F5505 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE47E2A43B6D7006F5505 /* NetworkConstantsTests.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A0FEE4802A43B8A1006F5505 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE4772A43B30F006F5505 /* HttpMethods.swift */,
+				A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */,
+				A0FEE4792A43B3A1006F5505 /* Endpoint.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FEE47C2A43B432006F5505 /* NetworkConstants.swift in Sources */,
 				A09D410B2A4304C6003B94A2 /* RepositoriesPresenterProtocol.swift in Sources */,
 				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
 				A0FEE4782A43B30F006F5505 /* HttpMethods.swift in Sources */,
@@ -675,6 +701,7 @@
 				A0FEE45E2A4395FE006F5505 /* TrendingRepositoriesResponse.swift in Sources */,
 				A0C6C9B42A434B1F00D29538 /* ErrorView.swift in Sources */,
 				A0C6C9A32A43334000D29538 /* RepositoriesPresenter.swift in Sources */,
+				A0FEE47A2A43B3A1006F5505 /* Endpoint.swift in Sources */,
 				A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */,
 				A09D41042A430127003B94A2 /* UITableView+Register.swift in Sources */,
 				A0DA12352A425FCC001F72DD /* RepositoriesViewController.swift in Sources */,
@@ -703,6 +730,7 @@
 				A09D410D2A430E96003B94A2 /* RepositoriesPresenterSpy.swift in Sources */,
 				A0C6C9AA2A43404900D29538 /* RepositoriesViewSpy.swift in Sources */,
 				A0A46E582A4272A600D5055D /* RepositoryCellViewModel+Stub.swift in Sources */,
+				A0FEE47F2A43B6D7006F5505 /* NetworkConstantsTests.swift in Sources */,
 				A0FEE46E2A43A1A0006F5505 /* TrendingRepositoriesDummyResponse.swift in Sources */,
 				A0DA123B2A426480001F72DD /* RepositoryTableViewCellTests.swift in Sources */,
 				A0FEE4702A43A3B8006F5505 /* DummyError.swift in Sources */,
