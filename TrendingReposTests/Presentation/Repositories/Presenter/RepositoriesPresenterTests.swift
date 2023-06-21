@@ -88,6 +88,31 @@ final class RepositoriesPresenterTests: XCTestCase {
         XCTAssertEqual(view.currentState, .success)
     }
     
+    func testPresenter_whenFetchesRepositoriesFails_removesViewModels() {
+        // Given
+        let response: TestingError = .dummy
+        useCase.result = .failure(response)
+        
+        // When
+        sut.viewDidLoad()
+        
+        // Then
+        XCTAssertEqual(sut.numberOfItems, 0)
+    }
+    
+    func testPresenter_whenFetchesRepositoriesFails_setsFailureViewState() {
+        // Given
+        let response: TestingError = .dummy
+        useCase.result = .failure(response)
+        
+        // When
+        sut.viewDidLoad()
+        
+        // Then
+        XCTAssertEqual(view.updateStateCallsCount, 2)
+        XCTAssertEqual(view.currentState, .failure)
+    }
+    
     func testPresenter_whenSkeletonItemIsSelected_doesNothing() {
         // When
         sut.viewDidLoad()

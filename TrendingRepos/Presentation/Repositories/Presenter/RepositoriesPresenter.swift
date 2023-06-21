@@ -52,7 +52,8 @@ private extension RepositoriesPresenter {
             case let .success(response):
                 handleSuccessState(repositories: response.repositories)
             case let .failure(error):
-                break
+                print(error.localizedDescription)
+                handleFailureState()
             }
         }
     }
@@ -68,6 +69,11 @@ private extension RepositoriesPresenter {
     func handleSuccessState(repositories: [TrendingRepository]) {
         viewModels = repositories.compactMap { $0.uiModel?.wrapped }
         view?.updateState(.success)
+    }
+    
+    func handleFailureState() {
+        viewModels = []
+        view?.updateState(.failure)
     }
 }
 
