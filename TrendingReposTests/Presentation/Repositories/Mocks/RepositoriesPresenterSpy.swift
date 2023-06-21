@@ -14,7 +14,7 @@ final class RepositoriesPresenterSpy {
     private(set) var didSelectItemCallsCount = 0
     private(set) var selectedItemIndex: Int?
     
-    var viewModels: [RepositoryTableViewCell.ViewModel] = []
+    var viewModels: [ViewModelState<ViewModel>] = []
 }
 
 extension RepositoriesPresenterSpy: RepositoriesPresenterProtocol {
@@ -26,7 +26,7 @@ extension RepositoriesPresenterSpy: RepositoriesPresenterProtocol {
         viewDidLoadCallsCount += 1
     }
     
-    func viewModel(for indexPath: IndexPath) -> TrendingRepos.RepositoryTableViewCell.ViewModel {
+    func viewModel(for indexPath: IndexPath) -> ViewModelState<ViewModel> {
         viewModels[indexPath.row]
     }
     

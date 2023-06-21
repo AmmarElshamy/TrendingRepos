@@ -11,6 +11,6 @@ protocol RepositoriesPresenterProtocol: AnyObject {
     var numberOfItems: Int { get }
     
     func viewDidLoad()
-    func viewModel(for indexPath: IndexPath) -> RepositoryTableViewCell.ViewModel
+    func viewModel(for indexPath: IndexPath) -> ViewModelState<ViewModel>
     func didSelectItem(at indexPath: IndexPath)
 }

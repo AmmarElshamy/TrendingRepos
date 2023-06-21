@@ -7,6 +7,9 @@
 
 import Foundation
 
+typealias ViewModel = RepositoryTableViewCell.ViewModel
+
+// MARK: - Model
 extension RepositoryTableViewCell {
     struct ViewModel: Equatable {
         let avatarURL: String?
@@ -16,5 +19,12 @@ extension RepositoryTableViewCell {
         let language: String?
         let starsCount: String?
         var isExpanded: Bool
+    }
+}
+
+// MARK: - Wrapper
+extension RepositoryTableViewCell.ViewModel {
+    var wrapped: ViewModelState<Self> {
+        .data(self)
     }
 }

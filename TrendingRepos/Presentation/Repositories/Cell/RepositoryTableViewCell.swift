@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 final class RepositoryTableViewCell: UITableViewCell {
     
@@ -50,18 +51,31 @@ private extension RepositoryTableViewCell {
     func setupCircularViews() {
         avatarImageView.isCircular = true
         languageBulletView.isCircular = true
+        
+        ownerNameLabel.skeletonCornerRadius = Float(ownerNameLabel.frame.height / 2)
+        titleLabel.skeletonCornerRadius = Float(titleLabel.frame.height / 2)
     }
 }
 
 // MARK: - Binding
 extension RepositoryTableViewCell {
-    func bind(_ viewModel: ViewModel) {
-        avatarImageView.loadImage(with: viewModel.avatarURL)
-        ownerNameLabel.text = viewModel.ownerName
-        titleLabel.text = viewModel.title
-        descriptionLabel.text = viewModel.description
-        languageLabel.text = viewModel.language
-        starsCountLabel.text = viewModel.starsCount
-        detailsStackView.isHidden = !viewModel.isExpanded
+    func bind(_ viewModel: ViewModelState<ViewModel>) {
+        switch viewModel {
+        case let .data(model):
+            hideSkeleton()
+            configureViews(with: model)
+        case .skeleton:
+            showAnimatedSkeleton()
+        }
+    }
+    
+    private func configureViews(with model: ViewModel) {
+        avatarImageView.loadImage(with: model.avatarURL)
+        ownerNameLabel.text = model.ownerName
+        titleLabel.text = model.title
+        descriptionLabel.text = model.description
+        languageLabel.text = model.language
+        starsCountLabel.text = model.starsCount
+        detailsStackView.isHidden = !model.isExpanded
     }
 }

@@ -15,6 +15,7 @@
 		A09D41062A430135003B94A2 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D41052A430135003B94A2 /* UITableView+Dequeue.swift */; };
 		A09D410B2A4304C6003B94A2 /* RepositoriesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D410A2A4304C6003B94A2 /* RepositoriesPresenterProtocol.swift */; };
 		A09D410D2A430E96003B94A2 /* RepositoriesPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D410C2A430E96003B94A2 /* RepositoriesPresenterSpy.swift */; };
+		A09D41102A431CB0003B94A2 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = A09D410F2A431CB0003B94A2 /* SkeletonView */; };
 		A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E542A426F9200D5055D /* RepositoryCellViewModel.swift */; };
 		A0A46E582A4272A600D5055D /* RepositoryCellViewModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E572A4272A600D5055D /* RepositoryCellViewModel+Stub.swift */; };
 		A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E592A42917500D5055D /* UIView+IsCircular.swift */; };
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09D41102A431CB0003B94A2 /* SkeletonView in Frameworks */,
 				A09D40F82A42983E003B94A2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +357,7 @@
 			name = TrendingRepos;
 			packageProductDependencies = (
 				A09D40F72A42983E003B94A2 /* Kingfisher */,
+				A09D410F2A431CB0003B94A2 /* SkeletonView */,
 			);
 			productName = TrendingRepos;
 			productReference = A0DA11EF2A412446001F72DD /* TrendingRepos.app */;
@@ -431,6 +434,7 @@
 			mainGroup = A0DA11E62A412446001F72DD;
 			packageReferences = (
 				A09D40F62A42983E003B94A2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A09D410E2A431CB0003B94A2 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = A0DA11F02A412446001F72DD /* Products */;
 			projectDirPath = "";
@@ -834,6 +838,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		A09D410E2A431CB0003B94A2 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -841,6 +853,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A09D40F62A42983E003B94A2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		A09D410F2A431CB0003B94A2 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A09D410E2A431CB0003B94A2 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

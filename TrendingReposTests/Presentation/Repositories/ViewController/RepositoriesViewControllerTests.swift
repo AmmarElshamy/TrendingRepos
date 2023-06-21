@@ -9,9 +9,7 @@ import XCTest
 @testable import TrendingRepos
 
 final class RepositoriesViewControllerTests: XCTestCase {
-    
-    typealias ViewModel = RepositoryTableViewCell.ViewModel
-    
+        
     var sut: RepositoriesViewController!
     var presenter: RepositoriesPresenterSpy!
 
@@ -37,7 +35,7 @@ final class RepositoriesViewControllerTests: XCTestCase {
     func testViewController_whenViewDidLoad_tableViewDisplaysRightNumberOfCells() {
         // Given
         let viewModels = [ViewModel](repeating: .stub(), count: 5)
-        presenter.viewModels = viewModels
+        presenter.viewModels = viewModels.map { $0.wrapped }
         
         // When
         sut.loadViewIfNeeded()
@@ -50,7 +48,7 @@ final class RepositoriesViewControllerTests: XCTestCase {
     func testViewController_whenViewDidLoad_andViewModelsExist_dequeuesRepositoryCell() {
         // Given
         let viewModel: ViewModel = .stub()
-        presenter.viewModels = [viewModel]
+        presenter.viewModels = [viewModel.wrapped]
         
         // When
         sut.loadViewIfNeeded()
@@ -64,7 +62,7 @@ final class RepositoriesViewControllerTests: XCTestCase {
     func testViewController_whenViewDidLoad_tableViewDisplaysLoadedModels() {
         // Given
         let viewModel: ViewModel = .stub(ownerName: "Ammar", title: "Trending")
-        presenter.viewModels = [viewModel]
+        presenter.viewModels = [viewModel.wrapped]
 
         // When
         sut.loadViewIfNeeded()
