@@ -15,6 +15,9 @@ final class RepositoriesViewController: UIViewController {
     // MARK: - Properties
     var presenter: RepositoriesPresenterProtocol!
     
+    // MARK: - CustomViews
+    private lazy var errorView = ErrorView()
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +66,7 @@ extension RepositoriesViewController: RepositoriesViewProtocol {
         case .loading, .success:
             tableView.backgroundView = nil
         case .failure:
-            // TODO: present error view
-            tableView.backgroundView = UIView()
+            tableView.backgroundView = errorView
             break
         }
         

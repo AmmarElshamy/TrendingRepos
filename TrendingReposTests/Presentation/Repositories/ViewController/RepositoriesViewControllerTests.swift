@@ -122,4 +122,22 @@ final class RepositoriesViewControllerTests: XCTestCase {
         // Then
         XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
     }
+    
+    func testViewController_whenStateIsFailure_showsErrorView() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.failure)
+        
+        // Then
+        XCTAssertTrue(sut.tableView.backgroundView is ErrorView)
+    }
+    
+    func testViewController_whenStateIsFailure_reloadsTableView() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.failure)
+        
+        // Then
+        XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
+    }
 }
