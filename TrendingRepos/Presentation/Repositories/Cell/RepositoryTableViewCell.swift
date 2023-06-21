@@ -55,6 +55,7 @@ private extension RepositoryTableViewCell {
 // MARK: - Binding
 extension RepositoryTableViewCell {
     func bind(_ viewModel: ViewModel) {
+        avatarImageView.loadImage(with: viewModel.avatarURL)
         ownerNameLabel.text = viewModel.ownerName
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
