@@ -11,6 +11,7 @@ import Foundation
 final class RepositoriesPresenterSpy {
     
     private(set) var viewDidLoadCallsCount = 0
+    private(set) var numberOfItemsCallsCount = 0
     private(set) var didSelectItemCallsCount = 0
     private(set) var selectedItemIndex: Int?
     
@@ -19,7 +20,8 @@ final class RepositoriesPresenterSpy {
 
 extension RepositoriesPresenterSpy: RepositoriesPresenterProtocol {
     var numberOfItems: Int {
-        viewModels.count
+        numberOfItemsCallsCount += 1
+        return viewModels.count
     }
     
     func viewDidLoad() {

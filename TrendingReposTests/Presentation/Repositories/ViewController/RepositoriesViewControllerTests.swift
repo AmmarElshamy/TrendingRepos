@@ -86,4 +86,40 @@ final class RepositoriesViewControllerTests: XCTestCase {
         XCTAssertEqual(presenter.didSelectItemCallsCount, 1)
         XCTAssertEqual(presenter.selectedItemIndex, indexPath.row)
     }
+    
+    func testViewController_whenStateIsLoading_hidesErrorView() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.loading)
+        
+        // Then
+        XCTAssertNil(sut.tableView.backgroundView)
+    }
+    
+    func testViewController_whenStateIsLoading_reloadsTableView() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.loading)
+        
+        // Then
+        XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
+    }
+    
+    func testViewController_whenStateIsSuccess_hidesErrorView() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.success)
+        
+        // Then
+        XCTAssertNil(sut.tableView.backgroundView)
+    }
+    
+    func testViewController_whenStateIsSuccess_reloadsTableView() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.success)
+        
+        // Then
+        XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
+    }
 }

@@ -55,3 +55,23 @@ extension RepositoriesViewController: UITableViewDelegate {
         presenter.didSelectItem(at: indexPath)
     }
 }
+
+// MARK: - ViewProtocol
+extension RepositoriesViewController: RepositoriesViewProtocol {
+    func updateState(_ state: ViewState) {
+        switch state {
+        case .loading, .success:
+            tableView.backgroundView = nil
+        case .failure:
+            // TODO: present error view
+            tableView.backgroundView = UIView()
+            break
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func reloadItem(at indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+}
