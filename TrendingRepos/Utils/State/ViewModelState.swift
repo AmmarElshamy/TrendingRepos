@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ViewModelState<T> {
+enum ViewModelState<T: Equatable>: Equatable {
     case data(_ value: T)
     case skeleton
 }

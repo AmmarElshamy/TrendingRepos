@@ -7,10 +7,10 @@
 
 import Foundation
 
-// We may add empty state if we need it
-
-enum StateUIModel: Equatable {
+enum ViewState: Equatable {
     case loading
     case success
     case failure
 }
+
+// We may add an empty state if we need it
