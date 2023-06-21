@@ -43,6 +43,8 @@
 		A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12402A426828001F72DD /* UIView+LoadNib.swift */; };
 		A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */; };
 		A0DA12452A4268C1001F72DD /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */; };
+		A0FEE4562A436313006F5505 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4552A436313006F5505 /* Factory.swift */; };
+		A0FEE4582A436355006F5505 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4572A436355006F5505 /* DependencyFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		A0DA12402A426828001F72DD /* UIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadNib.swift"; sourceTree = "<group>"; };
 		A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		A0FEE4552A436313006F5505 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		A0FEE4572A436355006F5505 /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,7 @@
 			children = (
 				A0DA12222A4223BE001F72DD /* AppDelegate */,
 				A0DA12242A4227C5001F72DD /* Coordinator */,
+				A0FEE4542A436307006F5505 /* Factory */,
 				A0DA122C2A425829001F72DD /* Presentation */,
 				A0DA12232A422407001F72DD /* Resources */,
 				A0DA123C2A426618001F72DD /* Utils */,
@@ -387,6 +392,15 @@
 				A09D40FB2A429868003B94A2 /* UIImageView */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A0FEE4542A436307006F5505 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE4552A436313006F5505 /* Factory.swift */,
+				A0FEE4572A436355006F5505 /* DependencyFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -538,6 +552,7 @@
 				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
 				A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */,
 				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
+				A0FEE4562A436313006F5505 /* Factory.swift in Sources */,
 				A0C6C9A82A433E4100D29538 /* RepositoriesViewProtocol.swift in Sources */,
 				A09D40FF2A42FF0D003B94A2 /* ViewState.swift in Sources */,
 				A09D41062A430135003B94A2 /* UITableView+Dequeue.swift in Sources */,
@@ -552,6 +567,7 @@
 				A09D41012A42FF9C003B94A2 /* ViewModelState.swift in Sources */,
 				A0DA12272A422845001F72DD /* Coordinator.swift in Sources */,
 				A09D40FA2A429863003B94A2 /* UIImageView+LoadImage.swift in Sources */,
+				A0FEE4582A436355006F5505 /* DependencyFactory.swift in Sources */,
 				A0DA11F32A412446001F72DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,7 @@ final class AppCoordinator: Coordinator {
     
     // MARK: - Properties
     private let navigationController: UINavigationController
+    private let factory: Factory
     
     private var window: UIWindow? {
         get {
@@ -22,8 +23,9 @@ final class AppCoordinator: Coordinator {
     }
     
     // MARK: - Initializer
-    init(navigationController: UINavigationController = .init()) {
+    init(factory: Factory = DependencyFactory(), navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
+        self.factory = factory
     }
     
     // MARK: - EntryPoint
@@ -40,7 +42,7 @@ private extension AppCoordinator {
     }
     
     func navigateToRootViewController() {
-        let viewController = UIViewController()
+        let viewController = factory.createRepositoriesView()
         navigationController.viewControllers = [viewController]
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
