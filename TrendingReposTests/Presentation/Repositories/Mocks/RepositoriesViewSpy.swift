@@ -23,6 +23,6 @@ extension RepositoriesViewSpy: RepositoriesViewProtocol {
     
     func reloadItem(at indexPath: IndexPath) {
         reloadItemCallsCount += 1
-        reloadedItemIndex = nil
+        reloadedItemIndex = indexPath.row
     }
 }

@@ -10,7 +10,8 @@ import Foundation
 final class DependencyFactory: Factory {
     func createRepositoriesView() -> RepositoriesViewController {
         let viewController = RepositoriesViewController()
-        let presenter = RepositoriesPresenter(view: viewController)
+        let useCase = TrendingRepositoriesUseCase()
+        let presenter = RepositoriesPresenter(view: viewController, useCase: useCase)
         viewController.presenter = presenter
         return viewController
     }

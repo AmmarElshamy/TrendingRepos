@@ -9,11 +9,13 @@ import Foundation
 
 final class RepositoriesPresenter {
     
+    private let useCase: TrendingRepositoriesUseCaseProtocol
     private weak var view: RepositoriesViewProtocol?
     private var viewModels: [ViewModelState<ViewModel>]
     
-    init(view: RepositoriesViewProtocol) {
+    init(view: RepositoriesViewProtocol, useCase: TrendingRepositoriesUseCaseProtocol) {
         self.view = view
+        self.useCase = useCase
         viewModels = []
     }
 }
@@ -26,7 +28,7 @@ extension RepositoriesPresenter: RepositoriesPresenterProtocol {
     
     func viewDidLoad() {
         handleLoadingState()
-        // TODO: send request
+        fetchRepositories()
     }
     
     func viewModel(for indexPath: IndexPath) -> ViewModelState<ViewModel> {
@@ -41,10 +43,51 @@ extension RepositoriesPresenter: RepositoriesPresenterProtocol {
     }
 }
 
+// MARK: - Data Fetching
+private extension RepositoriesPresenter {
+    func fetchRepositories() {
+        useCase.fetchRepositories { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case let .success(response):
+                handleSuccessState(repositories: response.repositories)
+            case let .failure(error):
+                print(error.localizedDescription)
+                handleFailureState()
+            }
+        }
+    }
+}
+
 // MARK: - States Handlers
 private extension RepositoriesPresenter {
     func handleLoadingState() {
         viewModels = .init(repeating: .skeleton, count: 8)
         view?.updateState(.loading)
+    }
+    
+    func handleSuccessState(repositories: [TrendingRepository]) {
+        viewModels = repositories.compactMap { $0.uiModel?.wrapped }
+        view?.updateState(.success)
+    }
+    
+    func handleFailureState() {
+        viewModels = []
+        view?.updateState(.failure)
+    }
+}
+
+// MARK: - Mapping
+private extension TrendingRepository {
+    var uiModel: ViewModel? {
+        guard let ownerName = owner?.name, let title else { return nil }
+        
+        return .init(avatarURL: owner?.avatarURL,
+                     ownerName: ownerName,
+                     title: title,
+                     description: description,
+                     language: language,
+                     starsCount: starsCount.toString,
+                     isExpanded: false)
     }
 }
