@@ -9,13 +9,12 @@ import Foundation
 @testable import TrendingRepos
 
 extension RepositoryTableViewCell.ViewModel {
-    
-    func stub(avatarURL: String? = nil,
+    static func stub(avatarURL: String? = nil,
               ownerName: String = "",
               title: String = "",
               description: String? = nil,
               language: String? = nil,
-              rating: String? = nil,
+              starsCount: String? = nil,
               isExpanded: Bool = false) -> Self {
         
         .init(avatarURL: avatarURL,
@@ -23,7 +22,7 @@ extension RepositoryTableViewCell.ViewModel {
               title: title,
               description: description,
               language: language,
-              rating: rating,
+              starsCount: starsCount,
               isExpanded: isExpanded)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E542A426F9200D5055D /* RepositoryCellViewModel.swift */; };
 		A0A46E582A4272A600D5055D /* RepositoryCellViewModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E572A4272A600D5055D /* RepositoryCellViewModel+Stub.swift */; };
+		A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E592A42917500D5055D /* UIView+IsCircular.swift */; };
 		A0DA11F32A412446001F72DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA11F22A412446001F72DD /* AppDelegate.swift */; };
 		A0DA11FC2A412447001F72DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DA11FB2A412447001F72DD /* Assets.xcassets */; };
 		A0DA11FF2A412447001F72DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0DA11FD2A412447001F72DD /* LaunchScreen.storyboard */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		A0A46E542A426F9200D5055D /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		A0A46E572A4272A600D5055D /* RepositoryCellViewModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCellViewModel+Stub.swift"; sourceTree = "<group>"; };
+		A0A46E592A42917500D5055D /* UIView+IsCircular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IsCircular.swift"; sourceTree = "<group>"; };
 		A0DA11EF2A412446001F72DD /* TrendingRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DA11F22A412446001F72DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0DA11FB2A412447001F72DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				A0DA123E2A4266DF001F72DD /* UIView+Indentifier.swift */,
 				A0DA12402A426828001F72DD /* UIView+LoadNib.swift */,
+				A0A46E592A42917500D5055D /* UIView+IsCircular.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
 				A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */,
 				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
+				A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */,
 				A0DA12352A425FCC001F72DD /* RepositoriesViewController.swift in Sources */,
 				A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */,
 				A0DA122B2A4228C6001F72DD /* AppCoordinator.swift in Sources */,

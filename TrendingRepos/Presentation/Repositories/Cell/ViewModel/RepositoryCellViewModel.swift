@@ -14,7 +14,7 @@ extension RepositoryTableViewCell {
         let title: String
         let description: String?
         let language: String?
-        let rating: String?
+        let starsCount: String?
         var isExpanded: Bool
     }
 }
