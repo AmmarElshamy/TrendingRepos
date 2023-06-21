@@ -51,6 +51,17 @@ final class RepositoryTableViewCellTests: XCTestCase {
         XCTAssertTrue(sut.detailsStackView.isHidden)
     }
     
+    func testRepositoryCell_whenBindSkeletonModel_userInteractionIsDisabled() {
+        // Given
+        let viewModel: ViewModelState<ViewModel> = .skeleton
+        
+        // When
+        sut.bind(viewModel)
+        
+        // Then
+        XCTAssertFalse(sut.isUserInteractionEnabled)
+    }
+    
     func testRepositoryCell_whenBindViewModel_skeletonIsHidden() {
         // Given
         let viewModel: ViewModel = .stub(isExpanded: true)
@@ -63,6 +74,17 @@ final class RepositoryTableViewCellTests: XCTestCase {
         XCTAssertFalse(sut.ownerNameLabel.sk.isSkeletonActive)
         XCTAssertFalse(sut.titleLabel.sk.isSkeletonActive)
         XCTAssertEqual(sut.detailsStackView.isHidden, !viewModel.isExpanded)
+    }
+    
+    func testRepositoryCell_whenBindSkeletonModel_userInteractionIsEnabled() {
+        // Given
+        let viewModel: ViewModel = .stub()
+        
+        // When
+        sut.bind(viewModel.wrapped)
+        
+        // Then
+        XCTAssertTrue(sut.isUserInteractionEnabled)
     }
     
     func testRepositoryCell_whenBindViewModel_ownerTitleIsDisplayed() {

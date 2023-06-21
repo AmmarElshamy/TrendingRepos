@@ -44,7 +44,7 @@ extension RepositoriesPresenter: RepositoriesPresenterProtocol {
 // MARK: - States Handlers
 private extension RepositoriesPresenter {
     func handleLoadingState() {
-        viewModels = .init(repeating: .skeleton, count: 5)
+        viewModels = .init(repeating: .skeleton, count: 8)
         view?.updateState(.loading)
     }
 }

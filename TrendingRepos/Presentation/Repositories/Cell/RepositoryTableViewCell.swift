@@ -38,6 +38,7 @@ private extension RepositoryTableViewCell {
     func setupViews() {
         selectionStyle = .none
         setupColors()
+        setupSkeleton()
     }
     
     func setupColors() {
@@ -49,12 +50,17 @@ private extension RepositoryTableViewCell {
         starsCountLabel.textColor = .gray
     }
     
+    func setupSkeleton() {
+        ownerNameLabel.skeletonTextLineHeight = .fixed(10)
+        ownerNameLabel.skeletonCornerRadius = 5
+        
+        titleLabel.skeletonTextLineHeight = .fixed(10)
+        titleLabel.skeletonCornerRadius = 5
+    }
+    
     func setupCircularViews() {
         avatarImageView.isCircular = true
         languageBulletView.isCircular = true
-        
-        ownerNameLabel.skeletonCornerRadius = Float(ownerNameLabel.frame.height / 2)
-        titleLabel.skeletonCornerRadius = Float(titleLabel.frame.height / 2)
     }
 }
 
@@ -65,8 +71,10 @@ extension RepositoryTableViewCell {
         case let .data(model):
             hideSkeleton()
             configureViews(with: model)
+            isUserInteractionEnabled = true
         case .skeleton:
             showAnimatedSkeleton()
+            isUserInteractionEnabled = false
         }
     }
     

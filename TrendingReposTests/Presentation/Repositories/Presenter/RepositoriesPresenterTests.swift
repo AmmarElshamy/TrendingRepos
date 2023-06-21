@@ -28,7 +28,7 @@ final class RepositoriesPresenterTests: XCTestCase {
         sut.viewDidLoad()
         
         // Then
-        let itemsCount = 5
+        let itemsCount = 8
         XCTAssertEqual(sut.numberOfItems, itemsCount)
         
         for index in 0..<itemsCount {

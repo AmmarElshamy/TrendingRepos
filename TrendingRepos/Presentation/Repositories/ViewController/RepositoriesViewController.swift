@@ -63,8 +63,12 @@ extension RepositoriesViewController: UITableViewDelegate {
 extension RepositoriesViewController: RepositoriesViewProtocol {
     func updateState(_ state: ViewState) {
         switch state {
-        case .loading, .success:
+        case .loading:
             tableView.backgroundView = nil
+            tableView.isScrollEnabled = false
+        case .success:
+            tableView.backgroundView = nil
+            tableView.isScrollEnabled = true
         case .failure:
             tableView.backgroundView = errorView
             break
