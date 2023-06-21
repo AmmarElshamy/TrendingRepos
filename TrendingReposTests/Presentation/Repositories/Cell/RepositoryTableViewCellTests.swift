@@ -93,4 +93,26 @@ final class RepositoryTableViewCellTests: XCTestCase {
         XCTAssertEqual(sut.starsCountLabel.text, viewModel.starsCount)
     }
     
+    func testRepositoryCell_whenBindViewModel_andCellIsCollapsed_detailsStackViewIsHidden() {
+        // Given
+        let viewModel = ViewModel.stub(isExpanded: false)
+        
+        // When
+        sut.bind(viewModel)
+        
+        // Then
+        XCTAssertTrue(sut.detailsStackView.isHidden)
+    }
+    
+    func testRepositoryCell_whenBindViewModel_andCellIsExpanded_detailsStackViewIsVisible() {
+        // Given
+        let viewModel = ViewModel.stub(isExpanded: true)
+        
+        // When
+        sut.bind(viewModel)
+        
+        // Then
+        XCTAssertFalse(sut.detailsStackView.isHidden)
+    }
+    
 }

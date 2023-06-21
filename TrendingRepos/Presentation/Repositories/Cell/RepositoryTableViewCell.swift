@@ -13,6 +13,7 @@ final class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsStackView: UIStackView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var languageBulletView: UIView!
     @IBOutlet weak var languageLabel: UILabel!
@@ -61,5 +62,6 @@ extension RepositoryTableViewCell {
         descriptionLabel.text = viewModel.description
         languageLabel.text = viewModel.language
         starsCountLabel.text = viewModel.starsCount
+        detailsStackView.isHidden = !viewModel.isExpanded
     }
 }
