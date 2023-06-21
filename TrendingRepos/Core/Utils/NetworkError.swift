@@ -7,14 +7,14 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError {
     case noData
     case networkError
     case invalidAPIKey
     case unKnown
 }
 
-extension NetworkError: LocalizedError {
+extension NetworkError: Error {
     public var localizedDescription: String {
         switch self {
         case .noData:

@@ -16,6 +16,7 @@ protocol Endpoint {
     var body: Data? { get }
 
     var urlRequest: URLRequest { get }
+    var cachingKey: String { get }
 }
 
 extension Endpoint {
@@ -44,5 +45,10 @@ extension Endpoint {
         urlRequest.httpBody = body
         
         return urlRequest
+    }
+    
+    var cachingKey: String {
+        let paramsKey = params?.values.joined(separator: "_") ?? "_"
+        return "\(baseURL)\(path)\(paramsKey)"
     }
 }

@@ -67,6 +67,15 @@
 		A0FEE48F2A43BD9B006F5505 /* UserDefaultsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE48E2A43BD9B006F5505 /* UserDefaultsClient.swift */; };
 		A0FEE4922A43BE31006F5505 /* Data+Decoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4912A43BE31006F5505 /* Data+Decoded.swift */; };
 		A0FEE4952A43BE6E006F5505 /* Encodable+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4942A43BE6E006F5505 /* Encodable+Data.swift */; };
+		A0FEE4982A43BF0A006F5505 /* CachingPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4972A43BF0A006F5505 /* CachingPolicy.swift */; };
+		A0FEE49B2A43BF3E006F5505 /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE49A2A43BF3E006F5505 /* DataSourceProtocol.swift */; };
+		A0FEE49E2A43BF76006F5505 /* LocalDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE49D2A43BF76006F5505 /* LocalDataSourceProtocol.swift */; };
+		A0FEE4A02A43BFC8006F5505 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE49F2A43BFC8006F5505 /* LocalDataSource.swift */; };
+		A0FEE4A22A43C05A006F5505 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4A12A43C05A006F5505 /* StorageError.swift */; };
+		A0FEE4A52A43C1E8006F5505 /* RemoteDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4A42A43C1E8006F5505 /* RemoteDataSourceProtocol.swift */; };
+		A0FEE4A72A43C204006F5505 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4A62A43C204006F5505 /* RemoteDataSource.swift */; };
+		A0FEE4AA2A43C2B9006F5505 /* CacheRepoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4A92A43C2B9006F5505 /* CacheRepoProtocol.swift */; };
+		A0FEE4AC2A43C2EA006F5505 /* CacheRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4AB2A43C2EA006F5505 /* CacheRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +157,15 @@
 		A0FEE48E2A43BD9B006F5505 /* UserDefaultsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsClient.swift; sourceTree = "<group>"; };
 		A0FEE4912A43BE31006F5505 /* Data+Decoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Decoded.swift"; sourceTree = "<group>"; };
 		A0FEE4942A43BE6E006F5505 /* Encodable+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Data.swift"; sourceTree = "<group>"; };
+		A0FEE4972A43BF0A006F5505 /* CachingPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPolicy.swift; sourceTree = "<group>"; };
+		A0FEE49A2A43BF3E006F5505 /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		A0FEE49D2A43BF76006F5505 /* LocalDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceProtocol.swift; sourceTree = "<group>"; };
+		A0FEE49F2A43BFC8006F5505 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		A0FEE4A12A43C05A006F5505 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		A0FEE4A42A43C1E8006F5505 /* RemoteDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProtocol.swift; sourceTree = "<group>"; };
+		A0FEE4A62A43C204006F5505 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		A0FEE4A92A43C2B9006F5505 /* CacheRepoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepoProtocol.swift; sourceTree = "<group>"; };
+		A0FEE4AB2A43C2EA006F5505 /* CacheRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,6 +554,7 @@
 		A0FEE4762A43B1B1006F5505 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A0FEE4962A43BEC7006F5505 /* Repo */,
 				A0FEE4832A43BA28006F5505 /* Clients */,
 				A0FEE4802A43B8A1006F5505 /* Utils */,
 			);
@@ -557,6 +576,7 @@
 				A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */,
 				A0FEE4792A43B3A1006F5505 /* Endpoint.swift */,
 				A0FEE4812A43B92E006F5505 /* NetworkError.swift */,
+				A0FEE4A12A43C05A006F5505 /* StorageError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -603,6 +623,53 @@
 				A0FEE4942A43BE6E006F5505 /* Encodable+Data.swift */,
 			);
 			path = Encodable;
+			sourceTree = "<group>";
+		};
+		A0FEE4962A43BEC7006F5505 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE4A82A43C296006F5505 /* CacheRepo */,
+				A0FEE4992A43BF20006F5505 /* DataSource */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		A0FEE4992A43BF20006F5505 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE49A2A43BF3E006F5505 /* DataSourceProtocol.swift */,
+				A0FEE49C2A43BF5E006F5505 /* Local */,
+				A0FEE4A32A43C1BE006F5505 /* Remote */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A0FEE49C2A43BF5E006F5505 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE49D2A43BF76006F5505 /* LocalDataSourceProtocol.swift */,
+				A0FEE49F2A43BFC8006F5505 /* LocalDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		A0FEE4A32A43C1BE006F5505 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE4A42A43C1E8006F5505 /* RemoteDataSourceProtocol.swift */,
+				A0FEE4A62A43C204006F5505 /* RemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		A0FEE4A82A43C296006F5505 /* CacheRepo */ = {
+			isa = PBXGroup;
+			children = (
+				A0FEE4972A43BF0A006F5505 /* CachingPolicy.swift */,
+				A0FEE4A92A43C2B9006F5505 /* CacheRepoProtocol.swift */,
+				A0FEE4AB2A43C2EA006F5505 /* CacheRepo.swift */,
+			);
+			path = CacheRepo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -752,13 +819,16 @@
 			files = (
 				A0FEE47C2A43B432006F5505 /* NetworkConstants.swift in Sources */,
 				A09D410B2A4304C6003B94A2 /* RepositoriesPresenterProtocol.swift in Sources */,
+				A0FEE4A52A43C1E8006F5505 /* RemoteDataSourceProtocol.swift in Sources */,
 				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
+				A0FEE49B2A43BF3E006F5505 /* DataSourceProtocol.swift in Sources */,
 				A0FEE48D2A43BCF6006F5505 /* LocalStorageKey.swift in Sources */,
 				A0FEE4782A43B30F006F5505 /* HttpMethods.swift in Sources */,
 				A0FEE4632A439B7A006F5505 /* TrendingRepositoriesUseCaseProtocol.swift in Sources */,
 				A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */,
 				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
 				A0FEE4882A43BA69006F5505 /* URLSessionClient.swift in Sources */,
+				A0FEE4982A43BF0A006F5505 /* CachingPolicy.swift in Sources */,
 				A0FEE4562A436313006F5505 /* Factory.swift in Sources */,
 				A0FEE4922A43BE31006F5505 /* Data+Decoded.swift in Sources */,
 				A0C6C9A82A433E4100D29538 /* RepositoriesViewProtocol.swift in Sources */,
@@ -771,6 +841,7 @@
 				A0FEE48B2A43BC97006F5505 /* LocalStorageClient.swift in Sources */,
 				A0C6C9A32A43334000D29538 /* RepositoriesPresenter.swift in Sources */,
 				A0FEE47A2A43B3A1006F5505 /* Endpoint.swift in Sources */,
+				A0FEE4A72A43C204006F5505 /* RemoteDataSource.swift in Sources */,
 				A0FEE4952A43BE6E006F5505 /* Encodable+Data.swift in Sources */,
 				A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */,
 				A09D41042A430127003B94A2 /* UITableView+Register.swift in Sources */,
@@ -780,11 +851,16 @@
 				A0FEE4662A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift in Sources */,
 				A0C6C9B62A4350C900D29538 /* UIView+LoadCustomViewNib.swift in Sources */,
 				A09D41012A42FF9C003B94A2 /* ViewModelState.swift in Sources */,
+				A0FEE49E2A43BF76006F5505 /* LocalDataSourceProtocol.swift in Sources */,
 				A0DA12272A422845001F72DD /* Coordinator.swift in Sources */,
+				A0FEE4AC2A43C2EA006F5505 /* CacheRepo.swift in Sources */,
 				A0FEE48F2A43BD9B006F5505 /* UserDefaultsClient.swift in Sources */,
+				A0FEE4AA2A43C2B9006F5505 /* CacheRepoProtocol.swift in Sources */,
 				A0FEE4602A439B11006F5505 /* TrendingRepositoriesUseCase.swift in Sources */,
 				A09D40FA2A429863003B94A2 /* UIImageView+LoadImage.swift in Sources */,
 				A0FEE4582A436355006F5505 /* DependencyFactory.swift in Sources */,
+				A0FEE4A22A43C05A006F5505 /* StorageError.swift in Sources */,
+				A0FEE4A02A43BFC8006F5505 /* LocalDataSource.swift in Sources */,
 				A0DA11F32A412446001F72DD /* AppDelegate.swift in Sources */,
 				A0FEE4862A43BA50006F5505 /* APIClient.swift in Sources */,
 			);
