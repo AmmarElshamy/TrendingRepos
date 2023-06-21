@@ -24,6 +24,14 @@ final class RepositoriesViewControllerTests: XCTestCase {
         sut = nil
     }
     
+    func testViewController_whenViewDidLoad_setsTitle() {
+        // When
+        sut.loadViewIfNeeded()
+        
+        // Then
+        XCTAssertEqual(sut.navigationItem.title, "Trending")
+    }
+    
     func testViewController_whenViewDidLoad_callsViewDidLoad() {
         // When
         sut.loadViewIfNeeded()

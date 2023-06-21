@@ -21,6 +21,7 @@ final class RepositoriesViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTitle()
         presenter.viewDidLoad()
         setupTableView()
     }
@@ -28,6 +29,10 @@ final class RepositoriesViewController: UIViewController {
 
 // MARK: - Setup
 private extension RepositoriesViewController {
+    func setupTitle() {
+        navigationItem.title = "Trending"
+    }
+    
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
