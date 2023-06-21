@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A09D40F82A42983E003B94A2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A09D40F72A42983E003B94A2 /* Kingfisher */; };
 		A09D40FA2A429863003B94A2 /* UIImageView+LoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D40F92A429863003B94A2 /* UIImageView+LoadImage.swift */; };
+		A09D40FF2A42FF0D003B94A2 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D40FE2A42FF0D003B94A2 /* ViewState.swift */; };
+		A09D41012A42FF9C003B94A2 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D41002A42FF9C003B94A2 /* ViewModelState.swift */; };
 		A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E542A426F9200D5055D /* RepositoryCellViewModel.swift */; };
 		A0A46E582A4272A600D5055D /* RepositoryCellViewModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E572A4272A600D5055D /* RepositoryCellViewModel+Stub.swift */; };
 		A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A46E592A42917500D5055D /* UIView+IsCircular.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		A09D40F92A429863003B94A2 /* UIImageView+LoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImage.swift"; sourceTree = "<group>"; };
+		A09D40FE2A42FF0D003B94A2 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		A09D41002A42FF9C003B94A2 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 		A0A46E542A426F9200D5055D /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		A0A46E572A4272A600D5055D /* RepositoryCellViewModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCellViewModel+Stub.swift"; sourceTree = "<group>"; };
 		A0A46E592A42917500D5055D /* UIView+IsCircular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IsCircular.swift"; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 				A0A46E592A42917500D5055D /* UIView+IsCircular.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		A09D40FD2A42FEFE003B94A2 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				A09D40FE2A42FF0D003B94A2 /* ViewState.swift */,
+				A09D41002A42FF9C003B94A2 /* ViewModelState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		A0A46E532A426F6F00D5055D /* ViewModel */ = {
@@ -282,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				A0DA123D2A426629001F72DD /* Extensions */,
+				A09D40FD2A42FEFE003B94A2 /* State */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -437,10 +451,12 @@
 				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
 				A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */,
 				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
+				A09D40FF2A42FF0D003B94A2 /* ViewState.swift in Sources */,
 				A0A46E5A2A42917500D5055D /* UIView+IsCircular.swift in Sources */,
 				A0DA12352A425FCC001F72DD /* RepositoriesViewController.swift in Sources */,
 				A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */,
 				A0DA122B2A4228C6001F72DD /* AppCoordinator.swift in Sources */,
+				A09D41012A42FF9C003B94A2 /* ViewModelState.swift in Sources */,
 				A0DA12272A422845001F72DD /* Coordinator.swift in Sources */,
 				A09D40FA2A429863003B94A2 /* UIImageView+LoadImage.swift in Sources */,
 				A0DA11F32A412446001F72DD /* AppDelegate.swift in Sources */,
