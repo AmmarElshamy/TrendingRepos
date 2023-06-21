@@ -18,6 +18,7 @@ final class RepositoriesViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.viewDidLoad()
         setupTableView()
     }
 }
@@ -26,6 +27,7 @@ final class RepositoriesViewController: UIViewController {
 private extension RepositoriesViewController {
     func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(cell: RepositoryTableViewCell.self)
     }
 }
@@ -44,5 +46,12 @@ extension RepositoriesViewController: UITableViewDataSource {
         let viewModel = presenter.viewModel(for: indexPath)
         cell.bind(viewModel)
         return cell
+    }
+}
+
+// MARK: - TableViewDelegate
+extension RepositoriesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
     }
 }

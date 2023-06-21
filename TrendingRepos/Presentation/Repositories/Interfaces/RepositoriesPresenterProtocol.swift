@@ -9,5 +9,8 @@ import Foundation
 
 protocol RepositoriesPresenterProtocol: AnyObject {
     var numberOfItems: Int { get }
+    
+    func viewDidLoad()
     func viewModel(for indexPath: IndexPath) -> RepositoryTableViewCell.ViewModel
+    func didSelectItem(at indexPath: IndexPath)
 }

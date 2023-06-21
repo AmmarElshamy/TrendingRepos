@@ -13,17 +13,25 @@ final class RepositoriesViewControllerTests: XCTestCase {
     typealias ViewModel = RepositoryTableViewCell.ViewModel
     
     var sut: RepositoriesViewController!
-    var presenter: RepositoriesPresenterStub!
+    var presenter: RepositoriesPresenterSpy!
 
     override func setUp() {
         sut = .init()
-        presenter = RepositoriesPresenterStub()
+        presenter = .init()
         sut.presenter = presenter
     }
 
     override func tearDown() {
         presenter = nil
         sut = nil
+    }
+    
+    func testViewController_whenViewDidLoad_callsViewDidLoad() {
+        // When
+        sut.loadViewIfNeeded()
+        
+        // Then
+        XCTAssertEqual(presenter.viewDidLoadCallsCount, 1)
     }
     
     func testViewController_whenViewDidLoad_tableViewDisplaysRightNumberOfCells() {
@@ -66,5 +74,18 @@ final class RepositoriesViewControllerTests: XCTestCase {
                                  cellForRowAt: .init(row: 0, section: 0)) as? RepositoryTableViewCell
         XCTAssertEqual(cell?.ownerNameLabel.text, viewModel.ownerName)
         XCTAssertEqual(cell?.titleLabel.text, viewModel.title)
+    }
+    
+    func testViewController_whenItemIsSelected_callsDidSelectItem() {
+        // Given
+        let indexPath = IndexPath(row: 5, section: 0)
+        
+        // When
+        sut.loadViewIfNeeded()
+        sut.tableView(sut.tableView, didSelectRowAt: indexPath)
+        
+        // Then
+        XCTAssertEqual(presenter.didSelectItemCallsCount, 1)
+        XCTAssertEqual(presenter.selectedItemIndex, indexPath.row)
     }
 }
