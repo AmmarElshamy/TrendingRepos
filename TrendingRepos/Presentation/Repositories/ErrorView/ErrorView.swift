@@ -20,6 +20,7 @@ class ErrorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadCustomViewNib()
+        setupViews()
     }
         
     override func awakeFromNib() {
@@ -44,7 +45,7 @@ private extension ErrorView {
     
     func setupRetryButton() {
         retryButton.setTitle("Retry", for: .normal)
-        retryButton.titleLabel?.textColor = .systemGreen
+        retryButton.setTitleColor(.systemGreen, for: .normal)
         retryButton.layer.borderWidth = 1
         retryButton.layer.borderColor = UIColor.systemGreen.cgColor
         retryButton.layer.cornerRadius = 8
