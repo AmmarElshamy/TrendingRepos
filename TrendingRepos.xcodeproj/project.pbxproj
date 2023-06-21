@@ -59,6 +59,7 @@
 		A0FEE47A2A43B3A1006F5505 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4792A43B3A1006F5505 /* Endpoint.swift */; };
 		A0FEE47C2A43B432006F5505 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */; };
 		A0FEE47F2A43B6D7006F5505 /* NetworkConstantsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE47E2A43B6D7006F5505 /* NetworkConstantsTests.swift */; };
+		A0FEE4822A43B92E006F5505 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4812A43B92E006F5505 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		A0FEE4792A43B3A1006F5505 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		A0FEE47E2A43B6D7006F5505 /* NetworkConstantsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstantsTests.swift; sourceTree = "<group>"; };
+		A0FEE4812A43B92E006F5505 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -537,6 +539,7 @@
 				A0FEE4772A43B30F006F5505 /* HttpMethods.swift */,
 				A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */,
 				A0FEE4792A43B3A1006F5505 /* Endpoint.swift */,
+				A0FEE4812A43B92E006F5505 /* NetworkError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
 				A0FEE4562A436313006F5505 /* Factory.swift in Sources */,
 				A0C6C9A82A433E4100D29538 /* RepositoriesViewProtocol.swift in Sources */,
+				A0FEE4822A43B92E006F5505 /* NetworkError.swift in Sources */,
 				A09D40FF2A42FF0D003B94A2 /* ViewState.swift in Sources */,
 				A09D41062A430135003B94A2 /* UITableView+Dequeue.swift in Sources */,
 				A0FEE4732A43A6D5006F5505 /* Optional+ToString.swift in Sources */,
