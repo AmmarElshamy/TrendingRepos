@@ -36,6 +36,7 @@ final class RepositoryTableViewCell: UITableViewCell {
 // MARK: - Setup
 private extension RepositoryTableViewCell {
     func setupViews() {
+        selectionStyle = .none
         setupColors()
     }
     
