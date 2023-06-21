@@ -8,6 +8,6 @@
 import UIKit
 
 protocol Coordinator: AnyObject {
-    init(navigationController: UINavigationController)
+    init(factory: Factory, navigationController: UINavigationController)
     func start()
 }
