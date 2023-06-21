@@ -1,5 +1,5 @@
 //
-//  TrendingRepository.swift
+//  TrendingRepositoriesResponse.swift
 //  TrendingRepos
 //
 //  Created by Ammar Elshamy on 21/06/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrendingRepositoriesResponse: Codable {
+struct TrendingRepositoriesResponse: Codable, Equatable {
     let repositories: [TrendingRepository]
     
     enum CodingKeys: String, CodingKey {
@@ -15,7 +15,7 @@ struct TrendingRepositoriesResponse: Codable {
     }
 }
 
-struct TrendingRepository: Codable {
+struct TrendingRepository: Codable, Equatable {
     let id: Int
     let title: String?
     let owner: RepositoryOwner?
@@ -30,7 +30,7 @@ struct TrendingRepository: Codable {
     }
 }
 
-struct RepositoryOwner: Codable {
+struct RepositoryOwner: Codable, Equatable {
     let id: Int
     let name: String?
     let avatarURL: String?
