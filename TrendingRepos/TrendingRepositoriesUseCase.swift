@@ -10,7 +10,7 @@ import Foundation
 final class TrendingRepositoriesUseCase {
     private let repo: TrendingRepositoriesRepoProtocol
     
-    init(repo: TrendingRepositoriesRepoProtocol) {
+    init(repo: TrendingRepositoriesRepoProtocol = DummyRepo()) {
         self.repo = repo
     }
 }
@@ -23,5 +23,12 @@ extension TrendingRepositoriesUseCase: TrendingRepositoriesUseCaseProtocol {
                 completion(result)
             }
         }
+    }
+}
+
+// TODO: to be removed
+final class DummyRepo: TrendingRepositoriesRepoProtocol {
+    func fetchRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ()) {
+        
     }
 }
