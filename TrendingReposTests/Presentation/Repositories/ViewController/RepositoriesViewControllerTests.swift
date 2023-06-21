@@ -10,8 +10,8 @@ import XCTest
 
 final class RepositoriesViewControllerTests: XCTestCase {
         
-    var sut: RepositoriesViewController!
-    var presenter: RepositoriesPresenterSpy!
+    private var sut: RepositoriesViewController!
+    private var presenter: RepositoriesPresenterSpy!
 
     override func setUp() {
         sut = .init()

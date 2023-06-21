@@ -10,8 +10,8 @@ import XCTest
 
 final class RepositoriesPresenterTests: XCTestCase {
     
-    var sut: RepositoriesPresenter!
-    var view: RepositoriesViewSpy!
+    private var sut: RepositoriesPresenter!
+    private var view: RepositoriesViewSpy!
     
     override func setUp() {
         view = .init()

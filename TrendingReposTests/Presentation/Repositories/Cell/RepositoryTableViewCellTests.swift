@@ -11,7 +11,7 @@ import UIKit
 
 final class RepositoryTableViewCellTests: XCTestCase {    
     
-    var sut: RepositoryTableViewCell!
+    private var sut: RepositoryTableViewCell!
 
     override func setUp() {
         sut = RepositoryTableViewCell.loadNib()
