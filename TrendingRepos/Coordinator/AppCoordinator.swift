@@ -39,6 +39,7 @@ final class AppCoordinator: Coordinator {
 private extension AppCoordinator {
     func setupMainWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.overrideUserInterfaceStyle = .light
     }
     
     func navigateToRootViewController() {
