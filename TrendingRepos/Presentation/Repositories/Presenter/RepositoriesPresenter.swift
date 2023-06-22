@@ -44,14 +44,27 @@ extension RepositoriesPresenter: RepositoriesPresenterProtocol {
     func retry() {
         fetchRepositories()
     }
+    
+    func refreshData() {
+        refreshRepositories()
+    }
 }
 
 // MARK: - Data Fetching
 private extension RepositoriesPresenter {
     func fetchRepositories() {
         handleLoadingState()
-        useCase.fetchRepositories { [weak self] result in
+        useCase.fetchRepositories(completion: completion)
+    }
+    
+    func refreshRepositories() {
+        useCase.refreshRepositories(completion: completion)
+    }
+    
+    var completion: (Result<TrendingRepositoriesResponse, Error>) -> Void {
+        { [weak self] result in
             guard let self else { return }
+            
             switch result {
             case let .success(response):
                 handleSuccessState(repositories: response.repositories)

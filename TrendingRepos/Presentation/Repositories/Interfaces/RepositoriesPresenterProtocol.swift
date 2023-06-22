@@ -14,4 +14,5 @@ protocol RepositoriesPresenterProtocol: AnyObject {
     func viewModel(for indexPath: IndexPath) -> ViewModelState<ViewModel>
     func didSelectItem(at indexPath: IndexPath)
     func retry()
+    func refreshData()
 }

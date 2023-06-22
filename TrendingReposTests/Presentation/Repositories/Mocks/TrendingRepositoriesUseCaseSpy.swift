@@ -10,12 +10,21 @@ import Foundation
 
 final class TrendingRepositoriesUseCaseSpy {
     private(set) var fetchRepositoriesCallsCount = 0
+    private(set) var refreshRepositoriesCallsCount = 0
+
     var result: Result<TrendingRepos.TrendingRepositoriesResponse, Error>?
 }
 
 extension TrendingRepositoriesUseCaseSpy: TrendingRepositoriesUseCaseProtocol {
     func fetchRepositories(completion: @escaping (Result<TrendingRepos.TrendingRepositoriesResponse, Error>) -> ()) {
         fetchRepositoriesCallsCount += 1
+        if let result {
+            completion(result)
+        }
+    }
+    
+    func refreshRepositories(completion: @escaping (Result<TrendingRepos.TrendingRepositoriesResponse, Error>) -> ()) {
+        refreshRepositoriesCallsCount += 1
         if let result {
             completion(result)
         }
