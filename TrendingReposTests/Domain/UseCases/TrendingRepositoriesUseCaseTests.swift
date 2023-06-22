@@ -23,9 +23,9 @@ final class TrendingRepositoriesUseCaseTests: XCTestCase {
         sut = nil
     }
     
+    // MARK: - FetchRepositories
     func testUseCase_whenFetchRepositoriesCalled_callsRepoFetchRepositories() {
         // When
-        
         sut.fetchRepositories { _ in }
         
         // Then
@@ -65,6 +65,63 @@ final class TrendingRepositoriesUseCaseTests: XCTestCase {
         
         // When
         sut.fetchRepositories { result in
+            switch result {
+            case .success:
+                break
+            case .failure:
+                expectedError = error
+                expectation.fulfill()
+            }
+        }
+        
+        // Then
+        wait(for: [expectation], timeout: 0.1)
+        XCTAssertEqual(expectedError, error)
+    }
+    
+    // MARK: - RefreshRepositories
+    func testUseCase_whenRefreshRepositoriesCalled_callsRepoFetchRepositories() {
+        // When
+        
+        sut.refreshRepositories { _ in }
+        
+        // Then
+        XCTAssertEqual(repo.fetchRepositoriesCallsCount, 1)
+        XCTAssertEqual(repo.cachePolicy, .remoteFirst)
+    }
+    
+    func testUseCase_whenRefreshRepositoriesCalled_withSuccessResponse_excutessCompletion() {
+        // Given
+        let expectation = expectation(description: "Use Case Success Response")
+        let response: TrendingRepositoriesResponse = .dummy
+        var expectedResponse: TrendingRepositoriesResponse?
+        repo.result = .success(response)
+        
+        // When
+        sut.refreshRepositories { result in
+            switch result {
+            case let .success(data):
+                expectedResponse = data
+                expectation.fulfill()
+            case .failure:
+                break
+            }
+        }
+        
+        // Then
+        wait(for: [expectation], timeout: 0.1)
+        XCTAssertEqual(expectedResponse, response)
+    }
+    
+    func testUseCase_whenRefreshRepositoriesCalled_withFailureResponse_excutessCompletion() {
+        // Given
+        let expectation = expectation(description: "Use Case Success Response")
+        let error: TestingError = .dummy
+        var expectedError: TestingError?
+        repo.result = .failure(error)
+        
+        // When
+        sut.refreshRepositories { result in
             switch result {
             case .success:
                 break

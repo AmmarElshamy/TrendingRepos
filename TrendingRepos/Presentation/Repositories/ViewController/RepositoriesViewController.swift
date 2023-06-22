@@ -12,16 +12,23 @@ final class RepositoriesViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - CustomViews
+    private var refreshControl: UIRefreshControl!
+    
+    private lazy var errorView = {
+        let view = ErrorView()
+        view.delegate = self
+        return view
+    }()
+    
     // MARK: - Properties
     var presenter: RepositoriesPresenterProtocol!
-    
-    // MARK: - CustomViews
-    private lazy var errorView = ErrorView()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTitle()
+        setupRefreshControl()
         presenter.viewDidLoad()
         setupTableView()
     }
@@ -37,6 +44,16 @@ private extension RepositoriesViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(cell: RepositoryTableViewCell.self)
+    }
+    
+    func setupRefreshControl() {
+        refreshControl = .init()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    @objc func refreshData() {
+        presenter.refreshData()
     }
 }
 
@@ -79,10 +96,18 @@ extension RepositoriesViewController: RepositoriesViewProtocol {
             break
         }
         
+        refreshControl.endRefreshing()
         tableView.reloadData()
     }
     
     func reloadItem(at indexPath: IndexPath) {
         tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+}
+
+// MARK: - ErrorViewDelegate
+extension RepositoriesViewController: ErrorViewDelegate {
+    func didTapRetry() {
+        presenter.retry()
     }
 }

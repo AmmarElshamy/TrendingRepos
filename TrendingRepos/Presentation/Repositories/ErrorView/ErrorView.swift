@@ -8,9 +8,15 @@
 import UIKit
 import Lottie
 
-class ErrorView: UIView {
+protocol ErrorViewDelegate: AnyObject {
+    func didTapRetry()
+}
+
+final class ErrorView: UIView {
     @IBOutlet private weak var animationView: LottieAnimationView!
     @IBOutlet weak var retryButton: UIButton!
+    
+    weak var delegate: ErrorViewDelegate?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -49,5 +55,12 @@ private extension ErrorView {
         retryButton.layer.borderWidth = 1
         retryButton.layer.borderColor = UIColor.systemGreen.cgColor
         retryButton.layer.cornerRadius = 8
+    }
+}
+
+// MARK: - Actions
+private extension ErrorView {
+    @IBAction func retryTapAction(_ sender: Any) {
+        delegate?.didTapRetry()
     }
 }

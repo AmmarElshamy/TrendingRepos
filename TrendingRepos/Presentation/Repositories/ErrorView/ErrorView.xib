@@ -59,6 +59,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Retry"/>
+                            <connections>
+                                <action selector="retryTapAction:" destination="-1" eventType="touchUpInside" id="kbb-0r-UKw"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

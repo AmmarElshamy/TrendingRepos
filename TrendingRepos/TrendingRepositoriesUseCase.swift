@@ -23,4 +23,12 @@ extension TrendingRepositoriesUseCase: TrendingRepositoriesUseCaseProtocol {
             }
         }
     }
+    
+    func refreshRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ()) {
+        repo.fetchRepositories(cachePolicy: .remoteFirst) { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+    }
 }

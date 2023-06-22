@@ -56,6 +56,37 @@ final class RepositoriesPresenterTests: XCTestCase {
         XCTAssertEqual(useCase.fetchRepositoriesCallsCount, 1)
     }
     
+    func testPresenter_whenRetryCalled_setsSkeletonViewModels() {
+        // When
+        sut.retry()
+        
+        // Then
+        let itemsCount = 8
+        XCTAssertEqual(sut.numberOfItems, itemsCount)
+        
+        for index in 0..<itemsCount {
+            let viewModel = sut.viewModel(for: IndexPath(row: index, section: 0))
+            XCTAssertEqual(viewModel, .skeleton)
+        }
+    }
+    
+    func testPresenter_whenRetryCalled_setsLoadingViewState() {
+        // When
+        sut.retry()
+        
+        // Then
+        XCTAssertEqual(view.updateStateCallsCount, 1)
+        XCTAssertEqual(view.currentState, .loading)
+    }
+    
+    func testPresenter_whenRetryCalled_fetchsRepositories() {
+        // When
+        sut.retry()
+        
+        // Then
+        XCTAssertEqual(useCase.fetchRepositoriesCallsCount, 1)
+    }
+    
     func testPresenter_whenFetchesRepositoriesSucceeds_setsResponseViewModels() {
         // Given
         let response: TrendingRepositoriesResponse = .dummy
@@ -113,6 +144,59 @@ final class RepositoriesPresenterTests: XCTestCase {
         XCTAssertEqual(view.currentState, .failure)
     }
     
+    func testPresenter_whenRefreshDataCalled_refreshesRepositories() {
+        // When
+        sut.refreshData()
+        
+        // Then
+        XCTAssertEqual(useCase.refreshRepositoriesCallsCount, 1)
+    }
+    
+    func testPresenter_whenRefreshDataSucceeds_setsResponseViewModels() {
+        // Given
+        let response: TrendingRepositoriesResponse = .dummy
+        let viewModels = response.viewModels
+        useCase.result = .success(response)
+        
+        // When
+        sut.refreshData()
+        
+        // Then
+        let itemsCount = response.repositories.count
+        XCTAssertEqual(sut.numberOfItems, itemsCount)
+        
+        for index in 0..<itemsCount {
+            let viewModel = sut.viewModel(for: IndexPath(row: index, section: 0))
+            XCTAssertEqual(viewModel, viewModels[index])
+        }
+    }
+    
+    func testPresenter_whenRefreshDataSucceeds_setsSuccessViewState() {
+        // Given
+        let response: TrendingRepositoriesResponse = .dummy
+        useCase.result = .success(response)
+        
+        // When
+        sut.refreshData()
+        
+        // Then
+        XCTAssertEqual(view.updateStateCallsCount, 1)
+        XCTAssertEqual(view.currentState, .success)
+    }
+    
+    func testPresenter_whenRefreshDataFails_setsFailureViewState() {
+        // Given
+        let response: TestingError = .dummy
+        useCase.result = .failure(response)
+        
+        // When
+        sut.refreshData()
+        
+        // Then
+        XCTAssertEqual(view.updateStateCallsCount, 1)
+        XCTAssertEqual(view.currentState, .failure)
+    }
+    
     func testPresenter_whenSkeletonItemIsSelected_doesNothing() {
         // When
         sut.viewDidLoad()
@@ -138,6 +222,7 @@ final class RepositoriesPresenterTests: XCTestCase {
         XCTAssertEqual(view.reloadItemCallsCount, 1)
         XCTAssertEqual(view.reloadedItemIndex, selectedIndex)
     }
+    
 }
 
 // MARK: - Helpers

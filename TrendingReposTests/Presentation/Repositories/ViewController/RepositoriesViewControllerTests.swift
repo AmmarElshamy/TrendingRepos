@@ -82,6 +82,15 @@ final class RepositoriesViewControllerTests: XCTestCase {
         XCTAssertEqual(cell?.titleLabel.text, viewModel.title)
     }
     
+    func testViewController_whenDidTapRetryCalled_callsPresenterRetry() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.didTapRetry()
+        
+        // Then
+        XCTAssertEqual(presenter.retryCallsCount, 1)
+    }
+    
     func testViewController_whenItemIsSelected_callsDidSelectItem() {
         // Given
         let indexPath = IndexPath(row: 5, section: 0)
@@ -113,6 +122,15 @@ final class RepositoriesViewControllerTests: XCTestCase {
         XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
     }
     
+    func testViewController_whenStateIsLoading_endsRefreshing() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.loading)
+        
+        // Then
+        XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false)
+    }
+    
     func testViewController_whenStateIsSuccess_hidesErrorView() {
         // When
         sut.loadViewIfNeeded()
@@ -131,6 +149,15 @@ final class RepositoriesViewControllerTests: XCTestCase {
         XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
     }
     
+    func testViewController_whenStateIsSuccess_endsRefreshing() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.success)
+        
+        // Then
+        XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false)
+    }
+    
     func testViewController_whenStateIsFailure_showsErrorView() {
         // When
         sut.loadViewIfNeeded()
@@ -147,5 +174,23 @@ final class RepositoriesViewControllerTests: XCTestCase {
         
         // Then
         XCTAssertEqual(presenter.numberOfItemsCallsCount, 1)
+    }
+    
+    func testViewController_whenStateIsFailure_endsRefreshing() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.updateState(.failure)
+        
+        // Then
+        XCTAssertEqual(sut.tableView.refreshControl?.isRefreshing, false)
+    }
+    
+    func testViewController_whenTableViewRefreshed_callsRefreshData() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.tableView.refreshControl?.sendActions(for: .valueChanged)
+        
+        // Then
+        XCTAssertEqual(presenter.refreshCallsCount, 1)
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol TrendingRepositoriesUseCaseProtocol {
     func fetchRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ())
+    func refreshRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ())
 }

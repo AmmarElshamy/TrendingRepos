@@ -11,6 +11,8 @@ import Foundation
 final class RepositoriesPresenterSpy {
     
     private(set) var viewDidLoadCallsCount = 0
+    private(set) var retryCallsCount = 0
+    private(set) var refreshCallsCount = 0
     private(set) var numberOfItemsCallsCount = 0
     private(set) var didSelectItemCallsCount = 0
     private(set) var selectedItemIndex: Int?
@@ -35,5 +37,13 @@ extension RepositoriesPresenterSpy: RepositoriesPresenterProtocol {
     func didSelectItem(at indexPath: IndexPath) {
         didSelectItemCallsCount += 1
         selectedItemIndex = indexPath.row
+    }
+    
+    func retry() {
+        retryCallsCount += 1
+    }
+    
+    func refreshData() {
+        refreshCallsCount += 1
     }
 }

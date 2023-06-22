@@ -27,7 +27,6 @@ extension RepositoriesPresenter: RepositoriesPresenterProtocol {
     }
     
     func viewDidLoad() {
-        handleLoadingState()
         fetchRepositories()
     }
     
@@ -41,13 +40,31 @@ extension RepositoriesPresenter: RepositoriesPresenterProtocol {
         viewModels[indexPath.row] = item.wrapped
         view?.reloadItem(at: indexPath)
     }
+    
+    func retry() {
+        fetchRepositories()
+    }
+    
+    func refreshData() {
+        refreshRepositories()
+    }
 }
 
 // MARK: - Data Fetching
 private extension RepositoriesPresenter {
     func fetchRepositories() {
-        useCase.fetchRepositories { [weak self] result in
+        handleLoadingState()
+        useCase.fetchRepositories(completion: completion)
+    }
+    
+    func refreshRepositories() {
+        useCase.refreshRepositories(completion: completion)
+    }
+    
+    var completion: (Result<TrendingRepositoriesResponse, Error>) -> Void {
+        { [weak self] result in
             guard let self else { return }
+            
             switch result {
             case let .success(response):
                 handleSuccessState(repositories: response.repositories)
