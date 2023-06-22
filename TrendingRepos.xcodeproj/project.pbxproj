@@ -35,6 +35,8 @@
 		A0D60F8B2A43D49300875E51 /* LocalDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F8A2A43D49300875E51 /* LocalDataSourceSpy.swift */; };
 		A0D60F8D2A43D4A200875E51 /* RemoteDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F8C2A43D4A200875E51 /* RemoteDataSourceSpy.swift */; };
 		A0D60F8F2A43EB8900875E51 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F8E2A43EB8900875E51 /* Decoder.swift */; };
+		A0D60F922A43EF8100875E51 /* ErrorViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F912A43EF8100875E51 /* ErrorViewTests.swift */; };
+		A0D60F942A43EFA400875E51 /* ErrorViewDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F932A43EFA400875E51 /* ErrorViewDelegateSpy.swift */; };
 		A0DA11F32A412446001F72DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA11F22A412446001F72DD /* AppDelegate.swift */; };
 		A0DA11FC2A412447001F72DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DA11FB2A412447001F72DD /* Assets.xcassets */; };
 		A0DA11FF2A412447001F72DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0DA11FD2A412447001F72DD /* LaunchScreen.storyboard */; };
@@ -128,6 +130,8 @@
 		A0D60F8A2A43D49300875E51 /* LocalDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceSpy.swift; sourceTree = "<group>"; };
 		A0D60F8C2A43D4A200875E51 /* RemoteDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceSpy.swift; sourceTree = "<group>"; };
 		A0D60F8E2A43EB8900875E51 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		A0D60F912A43EF8100875E51 /* ErrorViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewTests.swift; sourceTree = "<group>"; };
+		A0D60F932A43EFA400875E51 /* ErrorViewDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewDelegateSpy.swift; sourceTree = "<group>"; };
 		A0DA11EF2A412446001F72DD /* TrendingRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DA11F22A412446001F72DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0DA11FB2A412447001F72DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 				A09D410C2A430E96003B94A2 /* RepositoriesPresenterSpy.swift */,
 				A0C6C9A92A43404900D29538 /* RepositoriesViewSpy.swift */,
 				A0FEE4742A43A837006F5505 /* TrendingRepositoriesUseCaseSpy.swift */,
+				A0D60F932A43EFA400875E51 /* ErrorViewDelegateSpy.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -358,6 +363,14 @@
 				A0D60F852A43D40800875E51 /* TrendingRepositoriesRepoTests.swift */,
 			);
 			path = Repos;
+			sourceTree = "<group>";
+		};
+		A0D60F902A43EF7300875E51 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				A0D60F912A43EF8100875E51 /* ErrorViewTests.swift */,
+			);
+			path = ErrorView;
 			sourceTree = "<group>";
 		};
 		A0DA11E62A412446001F72DD = {
@@ -488,6 +501,7 @@
 				A0C6C9A42A4335F600D29538 /* Presenter */,
 				A0DA12382A426454001F72DD /* ViewController */,
 				A0DA12392A426461001F72DD /* Cell */,
+				A0D60F902A43EF7300875E51 /* ErrorView */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -957,6 +971,7 @@
 				A0FEE4752A43A837006F5505 /* TrendingRepositoriesUseCaseSpy.swift in Sources */,
 				A0DA12322A425E5F001F72DD /* RepositoriesViewControllerTests.swift in Sources */,
 				A09D410D2A430E96003B94A2 /* RepositoriesPresenterSpy.swift in Sources */,
+				A0D60F922A43EF8100875E51 /* ErrorViewTests.swift in Sources */,
 				A0D60F8D2A43D4A200875E51 /* RemoteDataSourceSpy.swift in Sources */,
 				A0C6C9AA2A43404900D29538 /* RepositoriesViewSpy.swift in Sources */,
 				A0D60F8B2A43D49300875E51 /* LocalDataSourceSpy.swift in Sources */,
@@ -964,6 +979,7 @@
 				A0FEE47F2A43B6D7006F5505 /* NetworkConstantsTests.swift in Sources */,
 				A0D60F862A43D40800875E51 /* TrendingRepositoriesRepoTests.swift in Sources */,
 				A0FEE46E2A43A1A0006F5505 /* TrendingRepositoriesDummyResponse.swift in Sources */,
+				A0D60F942A43EFA400875E51 /* ErrorViewDelegateSpy.swift in Sources */,
 				A0DA123B2A426480001F72DD /* RepositoryTableViewCellTests.swift in Sources */,
 				A0FEE4702A43A3B8006F5505 /* DummyError.swift in Sources */,
 			);

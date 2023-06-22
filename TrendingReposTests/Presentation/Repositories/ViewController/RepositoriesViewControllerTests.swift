@@ -82,6 +82,15 @@ final class RepositoriesViewControllerTests: XCTestCase {
         XCTAssertEqual(cell?.titleLabel.text, viewModel.title)
     }
     
+    func testViewController_whenDidTapRetryCalled_callsPresenterRetry() {
+        // When
+        sut.loadViewIfNeeded()
+        sut.didTapRetry()
+        
+        // Then
+        XCTAssertEqual(presenter.retryCallsCount, 1)
+    }
+    
     func testViewController_whenItemIsSelected_callsDidSelectItem() {
         // Given
         let indexPath = IndexPath(row: 5, section: 0)

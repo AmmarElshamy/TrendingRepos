@@ -56,6 +56,37 @@ final class RepositoriesPresenterTests: XCTestCase {
         XCTAssertEqual(useCase.fetchRepositoriesCallsCount, 1)
     }
     
+    func testPresenter_whenRetryCalled_setsSkeletonViewModels() {
+        // When
+        sut.retry()
+        
+        // Then
+        let itemsCount = 8
+        XCTAssertEqual(sut.numberOfItems, itemsCount)
+        
+        for index in 0..<itemsCount {
+            let viewModel = sut.viewModel(for: IndexPath(row: index, section: 0))
+            XCTAssertEqual(viewModel, .skeleton)
+        }
+    }
+    
+    func testPresenter_whenRetryCalled_setsLoadingViewState() {
+        // When
+        sut.retry()
+        
+        // Then
+        XCTAssertEqual(view.updateStateCallsCount, 1)
+        XCTAssertEqual(view.currentState, .loading)
+    }
+    
+    func testPresenter_whenRetryCalled_fetchsRepositories() {
+        // When
+        sut.retry()
+        
+        // Then
+        XCTAssertEqual(useCase.fetchRepositoriesCallsCount, 1)
+    }
+    
     func testPresenter_whenFetchesRepositoriesSucceeds_setsResponseViewModels() {
         // Given
         let response: TrendingRepositoriesResponse = .dummy
@@ -138,6 +169,7 @@ final class RepositoriesPresenterTests: XCTestCase {
         XCTAssertEqual(view.reloadItemCallsCount, 1)
         XCTAssertEqual(view.reloadedItemIndex, selectedIndex)
     }
+    
 }
 
 // MARK: - Helpers

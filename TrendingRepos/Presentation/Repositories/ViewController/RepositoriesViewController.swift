@@ -16,7 +16,11 @@ final class RepositoriesViewController: UIViewController {
     var presenter: RepositoriesPresenterProtocol!
     
     // MARK: - CustomViews
-    private lazy var errorView = ErrorView()
+    private lazy var errorView = {
+        let view = ErrorView()
+        view.delegate = self
+        return view
+    }()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -84,5 +88,12 @@ extension RepositoriesViewController: RepositoriesViewProtocol {
     
     func reloadItem(at indexPath: IndexPath) {
         tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+}
+
+// MARK: - ErrorViewDelegate
+extension RepositoriesViewController: ErrorViewDelegate {
+    func didTapRetry() {
+        presenter.retry()
     }
 }
