@@ -30,6 +30,7 @@ final class TrendingRepositoriesUseCaseTests: XCTestCase {
         
         // Then
         XCTAssertEqual(repo.fetchRepositoriesCallsCount, 1)
+        XCTAssertEqual(repo.cachePolicy, .always)
     }
     
     func testUseCase_whenFetchRepositoriesCalled_withSuccessResponse_excutessCompletion() {

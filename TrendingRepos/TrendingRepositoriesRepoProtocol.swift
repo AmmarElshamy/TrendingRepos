@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TrendingRepositoriesRepoProtocol {
-    func fetchRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ())
+    func fetchRepositories(cachePolicy: CachePolicy, completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ())
 }
