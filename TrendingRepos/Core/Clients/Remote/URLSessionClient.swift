@@ -8,14 +8,17 @@
 import Foundation
 
 extension URLSession: APIClient {
-    func perform<T: Decodable>(_ urlRequest: URLRequest, completion: @escaping (Result<T, Error>) -> ()) {
+    func perform<T: Decodable>(_ urlRequest: URLRequest?, completion: @escaping (Result<T, Error>) -> ()) {
+        guard let urlRequest else {
+            completion(.failure(NetworkError.badURL))
+            return
+        }
+        
         dataTask(with: urlRequest) { (data, response, error) in
             print("🌐 Request >>>", urlRequest.url!.absoluteString)
             let result: Result<T, Error>
             defer {
-                DispatchQueue.main.async {
-                    completion(result)
-                }
+                completion(result)
             }
             
             if let error = error {
@@ -45,7 +48,7 @@ extension URLSession: APIClient {
             }
             
             do {
-                let response: T = try JSONDecoder().decode(T.self, from: data)
+                let response = try JSONDecoder.standard.decode(T.self, from: data)
                 print("🌐 Response >>>", response)
                 result = .success(response)
             } catch {

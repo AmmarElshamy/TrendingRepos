@@ -10,25 +10,17 @@ import Foundation
 final class TrendingRepositoriesUseCase {
     private let repo: TrendingRepositoriesRepoProtocol
     
-    init(repo: TrendingRepositoriesRepoProtocol = DummyRepo()) {
+    init(repo: TrendingRepositoriesRepoProtocol) {
         self.repo = repo
     }
 }
 
-
 extension TrendingRepositoriesUseCase: TrendingRepositoriesUseCaseProtocol {
     func fetchRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ()) {
-        repo.fetchRepositories { result in
+        repo.fetchRepositories(cachePolicy: .always) { result in
             DispatchQueue.main.async {
                 completion(result)
             }
         }
-    }
-}
-
-// TODO: to be removed
-final class DummyRepo: TrendingRepositoriesRepoProtocol {
-    func fetchRepositories(completion: @escaping (Result<TrendingRepositoriesResponse, Error>) -> ()) {
-        
     }
 }

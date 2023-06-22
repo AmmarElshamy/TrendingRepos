@@ -8,5 +8,5 @@
 import Foundation
 
 protocol APIClient {
-    func perform<T: Decodable>(_ urlRequest: URLRequest, completion: @escaping (Result<T, Error>) -> ())
+    func perform<T: Decodable>(_ urlRequest: URLRequest?, completion: @escaping (Result<T, Error>) -> ())
 }

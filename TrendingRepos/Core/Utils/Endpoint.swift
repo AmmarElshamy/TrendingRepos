@@ -15,7 +15,7 @@ protocol Endpoint {
     var headers: [String: String]? { get }
     var body: Data? { get }
 
-    var urlRequest: URLRequest { get }
+    var urlRequest: URLRequest? { get }
     var cachingKey: String { get }
 }
 
