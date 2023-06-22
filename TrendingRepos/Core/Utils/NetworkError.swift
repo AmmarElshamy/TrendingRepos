@@ -11,6 +11,7 @@ enum NetworkError {
     case noData
     case networkError
     case invalidAPIKey
+    case badURL
     case unKnown
 }
 
@@ -28,6 +29,10 @@ extension NetworkError: Error {
         case .invalidAPIKey:
             return NSLocalizedString("Invalid API key: You must be granted a valid key.",
                                      comment: "Invalid API Key")
+            
+        case .badURL:
+            return NSLocalizedString("Invalid URL.",
+                                     comment: "Invalid URL")
             
         case .unKnown:
             return NSLocalizedString("Something Went Wrong",
