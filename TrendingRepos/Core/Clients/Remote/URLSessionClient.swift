@@ -48,7 +48,7 @@ extension URLSession: APIClient {
             }
             
             do {
-                let response: T = try JSONDecoder().decode(T.self, from: data)
+                let response = try JSONDecoder.standard.decode(T.self, from: data)
                 print("🌐 Response >>>", response)
                 result = .success(response)
             } catch {

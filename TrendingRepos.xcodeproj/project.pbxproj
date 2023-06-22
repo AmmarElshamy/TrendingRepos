@@ -34,6 +34,7 @@
 		A0D60F862A43D40800875E51 /* TrendingRepositoriesRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F852A43D40800875E51 /* TrendingRepositoriesRepoTests.swift */; };
 		A0D60F8B2A43D49300875E51 /* LocalDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F8A2A43D49300875E51 /* LocalDataSourceSpy.swift */; };
 		A0D60F8D2A43D4A200875E51 /* RemoteDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F8C2A43D4A200875E51 /* RemoteDataSourceSpy.swift */; };
+		A0D60F8F2A43EB8900875E51 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D60F8E2A43EB8900875E51 /* Decoder.swift */; };
 		A0DA11F32A412446001F72DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA11F22A412446001F72DD /* AppDelegate.swift */; };
 		A0DA11FC2A412447001F72DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0DA11FB2A412447001F72DD /* Assets.xcassets */; };
 		A0DA11FF2A412447001F72DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0DA11FD2A412447001F72DD /* LaunchScreen.storyboard */; };
@@ -126,6 +127,7 @@
 		A0D60F852A43D40800875E51 /* TrendingRepositoriesRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesRepoTests.swift; sourceTree = "<group>"; };
 		A0D60F8A2A43D49300875E51 /* LocalDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceSpy.swift; sourceTree = "<group>"; };
 		A0D60F8C2A43D4A200875E51 /* RemoteDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceSpy.swift; sourceTree = "<group>"; };
+		A0D60F8E2A43EB8900875E51 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		A0DA11EF2A412446001F72DD /* TrendingRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DA11F22A412446001F72DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0DA11FB2A412447001F72DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				A0FEE4772A43B30F006F5505 /* HttpMethods.swift */,
 				A0FEE47B2A43B432006F5505 /* NetworkConstants.swift */,
 				A0FEE4792A43B3A1006F5505 /* Endpoint.swift */,
+				A0D60F8E2A43EB8900875E51 /* Decoder.swift */,
 				A0FEE4812A43B92E006F5505 /* NetworkError.swift */,
 				A0FEE4A12A43C05A006F5505 /* StorageError.swift */,
 			);
@@ -923,6 +926,7 @@
 				A0DA12352A425FCC001F72DD /* RepositoriesViewController.swift in Sources */,
 				A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */,
 				A0DA122B2A4228C6001F72DD /* AppCoordinator.swift in Sources */,
+				A0D60F8F2A43EB8900875E51 /* Decoder.swift in Sources */,
 				A0FEE4662A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift in Sources */,
 				A0C6C9B62A4350C900D29538 /* UIView+LoadCustomViewNib.swift in Sources */,
 				A09D41012A42FF9C003B94A2 /* ViewModelState.swift in Sources */,
