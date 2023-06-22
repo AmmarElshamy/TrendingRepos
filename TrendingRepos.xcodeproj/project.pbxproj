@@ -51,12 +51,12 @@
 		A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12402A426828001F72DD /* UIView+LoadNib.swift */; };
 		A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */; };
 		A0DA12452A4268C1001F72DD /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */; };
+		A0DA38722A44973700F1DE97 /* TrendingRepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA386E2A44973700F1DE97 /* TrendingRepositoriesResponse.swift */; };
+		A0DA38732A44973700F1DE97 /* TrendingRepositoriesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA386F2A44973700F1DE97 /* TrendingRepositoriesUseCaseProtocol.swift */; };
+		A0DA38742A44973700F1DE97 /* TrendingRepositoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA38702A44973700F1DE97 /* TrendingRepositoriesUseCase.swift */; };
+		A0DA38752A44973700F1DE97 /* TrendingRepositoriesRepoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DA38712A44973700F1DE97 /* TrendingRepositoriesRepoProtocol.swift */; };
 		A0FEE4562A436313006F5505 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4552A436313006F5505 /* Factory.swift */; };
 		A0FEE4582A436355006F5505 /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4572A436355006F5505 /* DependencyFactory.swift */; };
-		A0FEE45E2A4395FE006F5505 /* TrendingRepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE45D2A4395FE006F5505 /* TrendingRepositoriesResponse.swift */; };
-		A0FEE4602A439B11006F5505 /* TrendingRepositoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE45F2A439B11006F5505 /* TrendingRepositoriesUseCase.swift */; };
-		A0FEE4632A439B7A006F5505 /* TrendingRepositoriesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4622A439B7A006F5505 /* TrendingRepositoriesUseCaseProtocol.swift */; };
-		A0FEE4662A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4652A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift */; };
 		A0FEE46A2A439D8E006F5505 /* TrendingRepositoriesRepoSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE4692A439D8E006F5505 /* TrendingRepositoriesRepoSpy.swift */; };
 		A0FEE46C2A439E21006F5505 /* TrendingRepositoriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE46B2A439E21006F5505 /* TrendingRepositoriesUseCaseTests.swift */; };
 		A0FEE46E2A43A1A0006F5505 /* TrendingRepositoriesDummyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FEE46D2A43A1A0006F5505 /* TrendingRepositoriesDummyResponse.swift */; };
@@ -149,12 +149,12 @@
 		A0DA12402A426828001F72DD /* UIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadNib.swift"; sourceTree = "<group>"; };
 		A0DA12422A4268C1001F72DD /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		A0DA12432A4268C1001F72DD /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
+		A0DA386E2A44973700F1DE97 /* TrendingRepositoriesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesResponse.swift; sourceTree = "<group>"; };
+		A0DA386F2A44973700F1DE97 /* TrendingRepositoriesUseCaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesUseCaseProtocol.swift; sourceTree = "<group>"; };
+		A0DA38702A44973700F1DE97 /* TrendingRepositoriesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesUseCase.swift; sourceTree = "<group>"; };
+		A0DA38712A44973700F1DE97 /* TrendingRepositoriesRepoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesRepoProtocol.swift; sourceTree = "<group>"; };
 		A0FEE4552A436313006F5505 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		A0FEE4572A436355006F5505 /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
-		A0FEE45D2A4395FE006F5505 /* TrendingRepositoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesResponse.swift; sourceTree = "<group>"; };
-		A0FEE45F2A439B11006F5505 /* TrendingRepositoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesUseCase.swift; sourceTree = "<group>"; };
-		A0FEE4622A439B7A006F5505 /* TrendingRepositoriesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesUseCaseProtocol.swift; sourceTree = "<group>"; };
-		A0FEE4652A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesRepoProtocol.swift; sourceTree = "<group>"; };
 		A0FEE4692A439D8E006F5505 /* TrendingRepositoriesRepoSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesRepoSpy.swift; sourceTree = "<group>"; };
 		A0FEE46B2A439E21006F5505 /* TrendingRepositoriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesUseCaseTests.swift; sourceTree = "<group>"; };
 		A0FEE46D2A43A1A0006F5505 /* TrendingRepositoriesDummyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesDummyResponse.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 				A0DA12222A4223BE001F72DD /* AppDelegate */,
 				A0DA12242A4227C5001F72DD /* Coordinator */,
 				A0FEE4542A436307006F5505 /* Factory */,
-				A0FEE45A2A438D62006F5505 /* Domain */,
+				A0DA38762A44973D00F1DE97 /* Domain */,
 				A0DA122C2A425829001F72DD /* Presentation */,
 				A03397F72A43C4AB0070442F /* Data */,
 				A0FEE4762A43B1B1006F5505 /* Core */,
@@ -551,6 +551,49 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A0DA38762A44973D00F1DE97 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA38792A44976100F1DE97 /* Entities */,
+				A0DA38772A44974700F1DE97 /* UseCases */,
+				A0DA387A2A44976900F1DE97 /* Interfaces */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A0DA38772A44974700F1DE97 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA38782A44975300F1DE97 /* TrendingRepositories */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		A0DA38782A44975300F1DE97 /* TrendingRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA38702A44973700F1DE97 /* TrendingRepositoriesUseCase.swift */,
+				A0DA386F2A44973700F1DE97 /* TrendingRepositoriesUseCaseProtocol.swift */,
+			);
+			path = TrendingRepositories;
+			sourceTree = "<group>";
+		};
+		A0DA38792A44976100F1DE97 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA386E2A44973700F1DE97 /* TrendingRepositoriesResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A0DA387A2A44976900F1DE97 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				A0DA38712A44973700F1DE97 /* TrendingRepositoriesRepoProtocol.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 		A0FEE4542A436307006F5505 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,49 +610,6 @@
 				A0FEE4682A439D7B006F5505 /* UseCases */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		A0FEE45A2A438D62006F5505 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				A0FEE45C2A438D7E006F5505 /* Entities */,
-				A0FEE45B2A438D78006F5505 /* UseCases */,
-				A0FEE4642A439C2F006F5505 /* Interfaces */,
-			);
-			name = Domain;
-			sourceTree = "<group>";
-		};
-		A0FEE45B2A438D78006F5505 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				A0FEE4612A439B4B006F5505 /* TrendingRepositories */,
-			);
-			name = UseCases;
-			sourceTree = "<group>";
-		};
-		A0FEE45C2A438D7E006F5505 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				A0FEE45D2A4395FE006F5505 /* TrendingRepositoriesResponse.swift */,
-			);
-			name = Entities;
-			sourceTree = "<group>";
-		};
-		A0FEE4612A439B4B006F5505 /* TrendingRepositories */ = {
-			isa = PBXGroup;
-			children = (
-				A0FEE4622A439B7A006F5505 /* TrendingRepositoriesUseCaseProtocol.swift */,
-				A0FEE45F2A439B11006F5505 /* TrendingRepositoriesUseCase.swift */,
-			);
-			name = TrendingRepositories;
-			sourceTree = "<group>";
-		};
-		A0FEE4642A439C2F006F5505 /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				A0FEE4652A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift */,
-			);
-			name = Interfaces;
 			sourceTree = "<group>";
 		};
 		A0FEE4672A439D73006F5505 /* Mocks */ = {
@@ -910,13 +910,15 @@
 				A0D60F822A43D24B00875E51 /* TrendingRepositoriesRepo.swift in Sources */,
 				A0FEE4A52A43C1E8006F5505 /* RemoteDataSourceProtocol.swift in Sources */,
 				A0DA12412A426828001F72DD /* UIView+LoadNib.swift in Sources */,
+				A0DA38752A44973700F1DE97 /* TrendingRepositoriesRepoProtocol.swift in Sources */,
 				A0FEE49B2A43BF3E006F5505 /* DataSourceProtocol.swift in Sources */,
 				A0FEE48D2A43BCF6006F5505 /* LocalStorageKey.swift in Sources */,
+				A0DA38722A44973700F1DE97 /* TrendingRepositoriesResponse.swift in Sources */,
 				A0FEE4782A43B30F006F5505 /* HttpMethods.swift in Sources */,
-				A0FEE4632A439B7A006F5505 /* TrendingRepositoriesUseCaseProtocol.swift in Sources */,
 				A0DA123F2A4266DF001F72DD /* UIView+Indentifier.swift in Sources */,
 				A0DA12442A4268C1001F72DD /* RepositoryTableViewCell.swift in Sources */,
 				A0FEE4882A43BA69006F5505 /* URLSessionClient.swift in Sources */,
+				A0DA38732A44973700F1DE97 /* TrendingRepositoriesUseCaseProtocol.swift in Sources */,
 				A0FEE4982A43BF0A006F5505 /* CachingPolicy.swift in Sources */,
 				A0FEE4562A436313006F5505 /* Factory.swift in Sources */,
 				A0FEE4922A43BE31006F5505 /* Data+Decoded.swift in Sources */,
@@ -925,7 +927,6 @@
 				A09D40FF2A42FF0D003B94A2 /* ViewState.swift in Sources */,
 				A09D41062A430135003B94A2 /* UITableView+Dequeue.swift in Sources */,
 				A0FEE4732A43A6D5006F5505 /* Optional+ToString.swift in Sources */,
-				A0FEE45E2A4395FE006F5505 /* TrendingRepositoriesResponse.swift in Sources */,
 				A0C6C9B42A434B1F00D29538 /* ErrorView.swift in Sources */,
 				A0FEE48B2A43BC97006F5505 /* LocalStorageClient.swift in Sources */,
 				A0C6C9A32A43334000D29538 /* RepositoriesPresenter.swift in Sources */,
@@ -938,7 +939,6 @@
 				A0A46E552A426F9200D5055D /* RepositoryCellViewModel.swift in Sources */,
 				A0DA122B2A4228C6001F72DD /* AppCoordinator.swift in Sources */,
 				A0D60F8F2A43EB8900875E51 /* Decoder.swift in Sources */,
-				A0FEE4662A439C48006F5505 /* TrendingRepositoriesRepoProtocol.swift in Sources */,
 				A0C6C9B62A4350C900D29538 /* UIView+LoadCustomViewNib.swift in Sources */,
 				A09D41012A42FF9C003B94A2 /* ViewModelState.swift in Sources */,
 				A0FEE49E2A43BF76006F5505 /* LocalDataSourceProtocol.swift in Sources */,
@@ -946,8 +946,8 @@
 				A0FEE4AC2A43C2EA006F5505 /* CacheRepo.swift in Sources */,
 				A03397FD2A43C5A00070442F /* RepositoriesEndpoint.swift in Sources */,
 				A0FEE48F2A43BD9B006F5505 /* UserDefaultsClient.swift in Sources */,
+				A0DA38742A44973700F1DE97 /* TrendingRepositoriesUseCase.swift in Sources */,
 				A0FEE4AA2A43C2B9006F5505 /* CacheRepoProtocol.swift in Sources */,
-				A0FEE4602A439B11006F5505 /* TrendingRepositoriesUseCase.swift in Sources */,
 				A09D40FA2A429863003B94A2 /* UIImageView+LoadImage.swift in Sources */,
 				A0FEE4582A436355006F5505 /* DependencyFactory.swift in Sources */,
 				A0FEE4A22A43C05A006F5505 /* StorageError.swift in Sources */,
